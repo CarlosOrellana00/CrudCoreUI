@@ -22,11 +22,12 @@ class DatabaseSeeder extends Seeder
         $this->call(RegionesSeeder::class);
     }
 
-    public function truncateTables(array $tables){
-      DB::statement('SET FOREING_KEY_CHECKS = 0;');
-      foreach($tables as $table){
-        DB:table($table)->truncate();
-      }
-      DB::statement('SET FOREING_KEY_CHECKS =1;');
+    public function truncateTables(array $tables)
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
+        foreach ($tables as $table) {
+          DB::table($table)->truncate();
+        }
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
     }
 }

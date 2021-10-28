@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('usuarios', UsuarioController::class);
+// Route::resource('usuarios', UsuarioController::class);
+Route::resource('usuarios', 'UsuarioController');
+
